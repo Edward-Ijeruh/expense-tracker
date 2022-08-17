@@ -60,7 +60,7 @@ expenseBtn.addEventListener("click", function (){
     if (expense.value === "") {
         expense.classList.toggle("border-danger")
     } else {
-        expense.classList.remove("border-danger")
+        expense.classList.remove("border-danger");
         let expenseVal = expense.value
         balance.innerText = Number(balance.innerText) - Number(expenseVal);
         let history = document.createElement("div")
