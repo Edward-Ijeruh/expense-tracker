@@ -1,0 +1,48 @@
+
+#income__btn {
+    color: black;
+    border-radius: 10px;
+    padding: 8px 15px;
+}
+
+#expense__btn {
+    color: black;
+    border-radius: 10px;
+    padding: 8px 15px;
+}
+
+#main {
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    top: 50px;
+    left: -150vw;
+}
+
+#main.active {
+    background-color: white;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: 0vw;
+    transition: left 0.5s;
+}
+
+body {
+    overflow: hidden;
+    max-height: fit-content;
+}
+
+#float-btn {
+    padding: 15px 20px;
+    position: fixed;
+    left: 80vw;
+    top: 80vh;
+}
+
+#history {
+    overflow-y: scroll;
+    max-height: 300px;
+}
+
