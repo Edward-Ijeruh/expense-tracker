@@ -33,9 +33,9 @@ exitBtn.addEventListener("click", function() {
 
 incomeBtn.addEventListener("click", function () {
     if (income.value === "") {
-        income.classList.add("border-danger")
+        income.classList.toggle("border-danger")
     } else {
-        income.classList.add("border-dark")
+        income.classList.remove("border-danger")
         let incomeVal = income.value
         balance.innerText = Number(balance.innerText) + Number(incomeVal);
         let history = document.createElement("div")
@@ -58,9 +58,9 @@ incomeBtn.addEventListener("click", function () {
 
 expenseBtn.addEventListener("click", function (){
     if (expense.value === "") {
-        expense.classList.add("border-danger")
+        expense.classList.toggle("border-danger")
     } else {
-        expense.classList.add("border-dark")
+        expense.classList.remove("border-danger")
         let expenseVal = expense.value
         balance.innerText = Number(balance.innerText) - Number(expenseVal);
         let history = document.createElement("div")
