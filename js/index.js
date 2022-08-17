@@ -3,13 +3,14 @@ let income = document.getElementById("income");
 let incomeBtn = document.getElementById("income__btn");
 let expense = document.getElementById("expense");
 let expenseBtn = document.getElementById("expense__btn");
-let history = document.getElementById("history");
 let floatBtn = document.getElementById("float-btn");
 let main = document.getElementById("main");
 let exitBtn = document.getElementById("exit-btn");
 let toastIncome = document.getElementById("toast-income");
 let toastExpense = document.getElementById("toast-expense");
 let historySpan = document.getElementById("history-span");
+let historyContainer = document.getElementById("historyContainer");
+let emptyHistory = document.getElementById("empty-history");
 let incomeVal = income.value
 let expenseVal = expense.value
 let current = new Date();
@@ -32,16 +33,23 @@ exitBtn.addEventListener("click", function() {
 
 incomeBtn.addEventListener("click", function () {
     if (income.value === "") {
-        income.style.borderColor = "red";
+        income.classList.add("border-danger")
     } else {
-        income.style.borderColor = "black";
+        income.classList.add("border-dark")
         let incomeVal = income.value
         balance.innerText = Number(balance.innerText) + Number(incomeVal);
-        let para = document.createElement("p")
-        para.style.color = "green";
-        historySpan.innerText = "";
-        history.append(para)
-        para.textContent = `Income: ₦${incomeVal} / ${dateTime}`
+        let history = document.createElement("div")
+        history.classList.add("history")
+        let listItem = document.createElement("div")
+        let listItemTwo = document.createElement("div")
+        listItem.style.color = "green";
+        listItemTwo.style.color = "green";
+        emptyHistory.classList.add("d-none")
+        historyContainer.append(history)
+        history.append(listItem)
+        history.append(listItemTwo)
+        listItem.textContent = `Income: ₦${incomeVal}`
+        listItemTwo.textContent = `${dateTime}`
         income.value = ""; 
         const toast = new bootstrap.Toast(toastIncome)
         toast.show()
@@ -50,15 +58,23 @@ incomeBtn.addEventListener("click", function () {
 
 expenseBtn.addEventListener("click", function (){
     if (expense.value === "") {
-        expense.style.borderColor = "red";
+        expense.classList.add("border-danger")
     } else {
-        expense.style.borderColor = "black";
+        expense.classList.add("border-dark")
         let expenseVal = expense.value
         balance.innerText = Number(balance.innerText) - Number(expenseVal);
-        let expensePara = document.createElement("p")
-        expensePara.style.color = "red";
-        history.appendChild(expensePara)
-        expensePara.textContent = `Expense: ₦${expenseVal} / ${dateTime}`
+        let history = document.createElement("div")
+        history.classList.add("history")
+        let listItem = document.createElement("div")
+        let listItemTwo = document.createElement("div")
+        listItem.style.color = "red";
+        listItemTwo.style.color = "red";
+        emptyHistory.classList.add("d-none")
+        historyContainer.append(history)
+        history.append(listItem)
+        history.append(listItemTwo)
+        listItem.textContent = `Income: ₦${expenseVal}`
+        listItemTwo.textContent = `${dateTime}`
         expense.value = "";
         const toast = new bootstrap.Toast(toastExpense)
         toast.show()

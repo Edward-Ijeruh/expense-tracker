@@ -35,8 +35,17 @@
         <div class=" pb-5">
             <div class="bg-white rounded-5 p-3 p-lg-5 text-start mt-5 mx-lg-5 mx-0 shadow-sm">
                 <p class="fw-bold fs-3">History</p>
-                <div id="history" class="text-secondary">
-                    <span id="history-span"><i>Your history is empty</i></span>
+                <div id="historyContainer" class="text-secondary d-flex flex-column">
+                    <div id="empty-history" class="text-muted text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list-ul text-muted" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                          </svg>
+                    </div>
+
+                    <!-- <div id="history" class="d-flex">
+
+                    </div> -->
+                    <!-- <span id="history-span"><i>Your history is empty</i></span> -->
                 </div>
             </div>
         </div>
@@ -79,14 +88,14 @@
                 <div class="col bg-white rounded-5 mb-5 p-4 p-lg-5 text-start shadow-sm">
                     <p class="fw-bold fs-5">Income</p>
                     <label class="mb-2" for="income">Enter income (Eg.₦5000)</label><br>
-                    <input id="income" class=" mb-2 mb-md-0 mb-lg-0" type="number"><br>
-                    <a id="income__btn" type="submit" class="border text-decoration-none">Enter</a>
+                    <input id="income" class=" mb-4 border-0 border-bottom" type="number"><br>
+                    <a id="income__btn" type="submit" class="border border-dark text-decoration-none">Enter</a>
                 </div>
                 <div class=" col bg-white rounded-5 p-4 p-lg-5 text-start shadow-sm">
                     <p class="fw-bold fs-5">Expense</p>
                     <label class="mb-2" for="expense">Enter expense (Eg.₦1000)</label><br>
-                    <input id="expense" class="mb-2 mb-md-0 mb-lg-0" type="number"><br>
-                    <a id="expense__btn" type="submit" class="border text-decoration-none">Enter</a>
+                    <input id="expense" class="mb-4 border-0 border-bottom" type="number"><br>
+                    <a id="expense__btn" type="submit" class="border border-dark text-decoration-none">Enter</a>
                 </div>
             </div>
         </div>
