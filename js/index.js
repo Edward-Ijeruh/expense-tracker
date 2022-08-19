@@ -13,10 +13,6 @@ let historyContainer = document.getElementById("historyContainer");
 let emptyHistory = document.getElementById("empty-history");
 let incomeVal = income.value
 let expenseVal = expense.value
-let current = new Date();
-let cDate = current.getFullYear() + '-' + (current.getMonth() + 1) + '-' + current.getDate();
-let cTime = current.getHours() + ":" + current.getMinutes();
-let dateTime = cDate + ' ' + cTime;
 let img = `<i class="bi bi-plus-circle-fill text-success"></i>`;
 let imgTwo = `<i class="bi bi-dash-circle-fill text-danger"></i>`;
 
@@ -82,6 +78,10 @@ incomeBtn.addEventListener("click", function () {
         historyContainer.append(history)
         history.append(listItem)
         history.append(listItemTwo)
+        let current = new Date();
+        let cDate = current.getFullYear() + '-' + (current.getMonth() + 1) + '-' + current.getDate();
+        let cTime = current.getHours() + ":" + current.getMinutes(); 
+        let dateTime = cDate + ' ' + cTime;
         listItem.innerHTML = `${img} ₦${incomeVal}`
         listItemTwo.textContent = `${dateTime}`
         income.value = "";
@@ -117,6 +117,10 @@ expenseBtn.addEventListener("click", function (){
         historyContainer.append(history)
         history.append(listItem)
         history.append(listItemTwo)
+        let current = new Date();
+        let cDate = current.getFullYear() + '-' + (current.getMonth() + 1) + '-' + current.getDate();
+        let cTime = current.getHours() + ":" + current.getMinutes(); 
+        let dateTime = cDate + ' ' + cTime;
         listItem.innerHTML = `${imgTwo} ₦${expenseVal}`
         listItemTwo.textContent = `${dateTime}`
         expense.value = "";
