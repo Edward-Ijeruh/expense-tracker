@@ -17,8 +17,8 @@ let current = new Date();
 let cDate = current.getFullYear() + '-' + (current.getMonth() + 1) + '-' + current.getDate();
 let cTime = current.getHours() + ":" + current.getMinutes();
 let dateTime = cDate + ' ' + cTime;
-let img = `<img src="../images/plus.png">`;
-let imgTwo = `<img src = "../images/remove.png">`;
+let img = `<i class="bi bi-plus-circle-fill text-success"></i>`;
+let imgTwo = `<i class="bi bi-dash-circle-fill text-danger"></i>`;
 
 
 //FLOAT BUTTON
