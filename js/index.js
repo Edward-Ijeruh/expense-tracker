@@ -1,4 +1,6 @@
 let balance = document.getElementById("balance");
+let incomeTotal = document.getElementById("income-total");
+let expenseTotal = document.getElementById("expense-total");
 let income = document.getElementById("income");
 let incomeBtn = document.getElementById("income__btn");
 let expense = document.getElementById("expense");
@@ -8,6 +10,8 @@ let main = document.getElementById("main");
 let exitBtn = document.getElementById("exit-btn");
 let toastIncome = document.getElementById("toast-income");
 let toastExpense = document.getElementById("toast-expense");
+let userOnline = document.getElementById("user-online");
+let userOffline = document.getElementById("user-offline");
 let historySpan = document.getElementById("history-span");
 let historyContainer = document.getElementById("historyContainer");
 let emptyHistory = document.getElementById("empty-history");
@@ -15,6 +19,33 @@ let incomeVal = income.value
 let expenseVal = expense.value
 let img = `<i class="bi bi-plus-circle-fill text-success"></i>`;
 let imgTwo = `<i class="bi bi-dash-circle-fill text-danger"></i>`;
+
+
+//FXN FOR NETWORK CONNECTIVITY
+function hasNetwork(online) {
+    if (online) {
+        const toast = new bootstrap.Toast(userOnline)
+        toast.show()
+    } else {
+        const toast = new bootstrap.Toast(userOffline)
+        toast.show()
+    }
+  }
+
+  window.addEventListener("load", () => {
+    hasNetwork(navigator.onLine);
+
+    window.addEventListener("online", () => {
+        hasNetwork(true);
+      });
+    
+      window.addEventListener("offline", () => {
+        hasNetwork(false);
+      });
+  });
+
+
+
 
 
 //FLOAT BUTTON
@@ -68,6 +99,7 @@ incomeBtn.addEventListener("click", function () {
         income.classList.remove("border-danger")
         let incomeVal = income.value
         balance.innerText = Number(balance.innerText) + Number(incomeVal);
+        incomeTotal.innerText = Number(incomeTotal.innerText) + Number(incomeVal);
         let history = document.createElement("div")
         history.classList.add("history")
         let listItem = document.createElement("div")
@@ -107,6 +139,7 @@ expenseBtn.addEventListener("click", function (){
         expense.classList.remove("border-danger");
         let expenseVal = expense.value
         balance.innerText = Number(balance.innerText) - Number(expenseVal);
+        expenseTotal.innerText = Number(expenseTotal.innerText) + Number(expenseVal);
         let history = document.createElement("div")
         history.classList.add("history")
         let listItem = document.createElement("div")
